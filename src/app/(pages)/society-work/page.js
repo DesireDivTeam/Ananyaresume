@@ -6,7 +6,7 @@ export default function page() {
     <>
       <Wrapper>
         <h1 className="font-semibold md:text-5xl text-4xl mb-4">
-          Society Work
+          Society Work heelo
         </h1>
         <div className="text-justify font-extralight space-y-4">
           <p>
