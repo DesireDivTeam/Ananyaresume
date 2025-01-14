@@ -1,85 +1,121 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Wrapper from "@/app/_components/Wrapper";
 import { HandCoins, BookOpen, Users, Sparkles } from "lucide-react";
+import { FaChevronDown } from "react-icons/fa";
 
-const ImpactSection = ({ icon: Icon, title, children }) => (
-  <div className="space-y-4 border-l border-gray-700 pl-6">
-    <div className="flex items-center gap-3 text-gray-300">
-      <Icon className="w-5 h-5" />
-      <h3 className="text-lg font-medium">{title}</h3>
-    </div>
-    <div className="text-gray-400 leading-relaxed">{children}</div>
-  </div>
-);
+const societySections = [
+  {
+    id: 'crowdfunding',
+    icon: HandCoins,
+    title: 'Crowdfunding Success',
+    content: `I have been part of a crowdfunding campaign where the goal was to
+      raise Rs 15000, for an underprivileged girl. I managed to raise Rs
+      31000 for that girl and this money was able to cover her education
+      expenses, her food and her uniform expenses. Nothing made me happier
+      than seeing the look of joy in her eyes.`
+  },
+  {
+    id: 'shiksha',
+    icon: BookOpen,
+    title: 'Shiksha Kendra Program',
+    content: `In my school, a program called "Shiksha Kendra" used to run after
+      school hours for underprivileged students. I volunteered to teach
+      them basic maths and Science at least 2-3 times as well as donated
+      some of my clothes and books to them.`
+  },
+  {
+    id: 'menstrual',
+    icon: Users,
+    title: 'Menstrual Health Awareness',
+    content: `In the 4th Semester of my college, I took an elective named
+      "Extension and Outreach", where I worked on raising awareness about
+      menstrual hygiene among poor women and girls. I visited a few NGOs
+      and talked about the importance of menstrual hygiene, made posters
+      and conducted a few activities so that the women and girls could
+      interact. I talked about the myths and taboos of menstruation, the
+      importance of sanitary napkins, the importance of hygiene and many
+      more.(Received O grade in this, highest)`
+  },
+  {
+    id: 'girlsgrow',
+    icon: Sparkles,
+    title: 'Girls Grow Program Mentor',
+    content: `Currently, I am also a mentor of a 'Girls Grow Program'. In this program, 
+      our main focus is on secondary and senior school girls. Our main aim is to 
+      motivate these girls in the field of STEM. Girls are discouraged from pursuing 
+      STEM, or they don't have the right/adequate guidance to form the required decision. 
+      So we conduct sessions for these girls about various topics like what STEM is, 
+      what options they have in STEM, the resources for the STEM fields, women in STEM, 
+      colleges, Career options in STEM field and much more.`
+  }
+];
 
 export default function Page() {
+  const [expandedSection, setExpandedSection] = useState('crowdfunding');
+
   return (
-    <Wrapper className="lg:border-2  lg:rounded-2xl lg:my-8">
-      <div className="max-w-5xl mx-auto space-y-12">
+    <Wrapper>
+      <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
         {/* Header */}
-        <div className="space-y-6">
-          <h1 className="font-light text-4xl md:text-5xl text-white/90">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
             Society Work
           </h1>
-          <p className="text-gray-300 text-lg font-light leading-relaxed">
-            &apos;&apos;Service before Self&apos;&apos; — I believe in giving
-            back to society in whatever ways I can to the less fortunate. It
-            breaks my heart that in my country, basic human rights, like the
-            Right to Education, the Right to be free from Exploitation, etc,
-            aren&apos;t given to underprivileged people. Coming from a secure
-            and healthy place, I feel that I should be able to help these people
-            especially women and children who are often left unnoticed.
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Service before Self — Contributing to positive change through various social initiatives
           </p>
         </div>
 
-        {/* Impact Sections */}
-        <div className="space-y-12">
-          <ImpactSection icon={HandCoins} title="Crowdfunding Success">
-            I have been part of a crowdfunding campaign where the goal was to
-            raise Rs 15000, for an underprivileged girl. I managed to raise Rs
-            31000 for that girl and this money was able to cover her education
-            expenses, her food and her uniform expenses. Nothing made me happier
-            than seeing the look of joy in her eyes.
-          </ImpactSection>
+        {/* Expandable Sections */}
+        <div className="space-y-4">
+          {societySections.map((section, index) => (
+            <div
+              key={section.id}
+              className="group bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl overflow-hidden hover:border-purple-500/30 transition-all duration-300"
+            >
+              <button
+                onClick={() => setExpandedSection(
+                  expandedSection === section.id ? null : section.id
+                )}
+                className="w-full flex justify-between items-center p-6 hover:bg-gray-800/50 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="text-purple-400/50 text-sm font-mono">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="flex items-center gap-3">
+                    <section.icon className="w-5 h-5 text-purple-400" />
+                    <h2 className="text-xl font-medium text-white group-hover:text-purple-200 transition-colors">
+                      {section.title}
+                    </h2>
+                  </div>
+                </div>
+                <FaChevronDown 
+                  className={`text-purple-400 transform transition-transform duration-300 ${
+                    expandedSection === section.id ? 'rotate-180' : ''
+                  } group-hover:text-purple-300`}
+                  size={16}
+                />
+              </button>
 
-          <ImpactSection icon={BookOpen} title="Shiksha Kendra Program">
-            In my school, a program called “Shiksha Kendra” used to run after
-            school hours for underprivileged students. I volunteered to teach
-            them basic maths and Science at least 2-3 times as well as donated
-            some of my clothes and books to them.
-          </ImpactSection>
-
-          <ImpactSection icon={Users} title="Menstrual Health Awareness">
-            In the 4th Semester of my college, I took an elective named
-            “Extension and Outreach”, where I worked on raising awareness about
-            menstrual hygiene among poor women and girls. I visited a few NGOs
-            and talked about the importance of menstrual hygiene, made posters
-            and conducted a few activities so that the women and girls could
-            interact. I talked about the myths and taboos of menstruation, the
-            importance of sanitary napkins, the importance of hygiene and many
-            more.(Received O grade in this, highest)
-          </ImpactSection>
-
-          <ImpactSection icon={Sparkles} title="Girls Grow Program Mentor">
-            Currently, I am also a mentor of a &apos;&apos;Girls Grow
-            Program&apos;&apos;. In this program, our main focus is on secondary
-            and senior school girls. Our main aim is to motivate these girls in
-            the field of STEM. Girls are discouraged from pursuing STEM, or they
-            don&apos;t have the right/adequate guidance to form the required
-            decision. So we conduct sessions for these girls about various
-            topics like what STEM is, what options they have in STEM, the
-            resources for the STEM fields, women in STEM, colleges, Career
-            options in STEM field and much more.I have been mentoring girls from
-            a few schools and providing them with the necessary guidance. I have
-            helped them with their questions related to the Science and
-            Technology Field, always motivating them to study and research more
-            before making a decision and have also provided them with the
-            necessary materials and resources.
-          </ImpactSection>
+              <div className={`transition-all duration-300 ease-in-out ${
+                expandedSection === section.id 
+                  ? 'max-h-[500px] opacity-100' 
+                  : 'max-h-0 opacity-0'
+              } overflow-hidden backdrop-blur-sm`}>
+                <div className="p-6 border-t border-gray-700/30 bg-gray-900/30">
+                  <p className="text-gray-300 text-justify leading-relaxed">
+                    {section.content}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Mission Statement */}
-        <div className="text-gray-400 leading-relaxed">
+        {/* Footer Quote */}
+        <div className="mt-12 p-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl text-gray-400 leading-relaxed">
           Through these initiatives, I strive to address the fundamental rights
           of underprivileged people, particularly in education and empowerment.
           Coming from a privileged position, I feel it&apos;s my responsibility
