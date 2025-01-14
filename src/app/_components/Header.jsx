@@ -50,6 +50,9 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-8 text-[15px]">
+            <Link href="/resume" className="hover:text-purple-600 transition-colors">
+                <li>Resume</li>
+              </Link>
               {Object.entries(menuStructure).map(([key, section]) => (
                 <li key={key} className="relative group">
                   <button
@@ -130,6 +133,10 @@ export default function Header() {
             onClick={e => e.stopPropagation()}
           >
             <div className="p-4 space-y-4">
+            <Link
+             onClick={() => setIsMenuOpen(false)} href="/resume" className="block pl-4 py-2 text-sm text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">
+                <span>Resume</span>
+              </Link>
               {Object.values(menuStructure).map((section, idx) => (
                 <div key={idx} className="space-y-2">
                   <div className="font-medium text-gray-900">{section.title}</div>
