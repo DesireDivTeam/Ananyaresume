@@ -110,7 +110,7 @@ export default function Header() {
             </div>
             
             <button 
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors z-50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <RxCross2 size={24} /> : <RxHamburgerMenu size={24} />}
