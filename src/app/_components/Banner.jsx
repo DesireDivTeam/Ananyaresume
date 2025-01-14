@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Banner() {
     return (
-        <div className='w-full py-16 md:py-20'>
+        <div className='w-full py-10 md:py-16'>
             <Wrapper className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
                 <section className='order-2 md:order-1'>
                     <div className='relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden group'>

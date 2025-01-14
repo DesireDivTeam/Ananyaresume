@@ -3,7 +3,7 @@ import Wrapper from './Wrapper'
 
 export default function Intro() {
     return (
-        <div className='py-16 md:py-20'>
+        <div className='py-10 md:py-16'>
             <Wrapper className='max-w-4xl mx-auto space-y-8'>
                 <div className='bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-8 md:p-12 space-y-8'>
                     <h2 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent'>
