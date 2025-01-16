@@ -52,11 +52,15 @@ const societySections = [
 ];
 
 export default function Page() {
-  const [expandedSection, setExpandedSection] = useState('crowdfunding');
+  const [expandedSection, setExpandedSection] = useState(null);
+
+  const toggleSection = (sectionId) => {
+    setExpandedSection(prev => prev === sectionId ? null : sectionId);
+  };
 
   return (
     <Wrapper>
-      <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-4xl mx-auto px-2 md:px-4 py-8 md:py-12">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
@@ -75,18 +79,16 @@ export default function Page() {
               className="group bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl overflow-hidden hover:border-purple-500/30 transition-all duration-300"
             >
               <button
-                onClick={() => setExpandedSection(
-                  expandedSection === section.id ? null : section.id
-                )}
+                onClick={() => toggleSection(section.id)}
                 className="w-full flex justify-between items-center p-6 hover:bg-gray-800/50 transition-colors"
               >
                 <div className="flex items-center gap-4">
-                  <span className="text-purple-400/50 text-sm font-mono">
+                  <span className="text-purple-400/50 text-lg font-mono">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <div className="flex items-center gap-3">
                     <section.icon className="w-5 h-5 text-purple-400" />
-                    <h2 className="text-xl font-medium text-white group-hover:text-purple-200 transition-colors">
+                    <h2 className="text-xl font-medium text-white text-start group-hover:text-purple-200 transition-colors">
                       {section.title}
                     </h2>
                   </div>

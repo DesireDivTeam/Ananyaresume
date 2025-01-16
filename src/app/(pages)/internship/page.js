@@ -5,7 +5,7 @@ import { Building2, Calendar, LineChart, MapPin } from "lucide-react";
 export default function Page() {
   return (
     <Wrapper>
-      <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+      <div className="max-w-4xl mx-auto px-2 md:px-4 py-8 md:py-12">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">

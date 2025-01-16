@@ -6,14 +6,6 @@ import { LuMail } from "react-icons/lu"
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx"
 
 const menuStructure = {
-  about: {
-    title: 'About',
-    items: [
-      { name: 'About Me', path: '/about' },
-      { name: 'Education', path: '/education' },
-      { name: 'Technical Skills', path: '/skills' }
-    ]
-  },
   academic: {
     title: 'Academic',
     items: [

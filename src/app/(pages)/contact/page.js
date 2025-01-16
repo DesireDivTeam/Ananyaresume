@@ -5,7 +5,7 @@ import { Mail, Phone, Linkedin, Github } from "lucide-react";
 export default function Page() {
   return (
     <Wrapper>
-      <div className="max-w-4xl mx-auto px-4 py-8 md:py-10">
+      <div className="max-w-4xl mx-auto px-2 md:px-4 py-8 md:py-10">
         <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 backdrop-blur-lg border border-gray-700/30 rounded-2xl p-8 md:p-12 space-y-10">
           {/* Header Section */}
           <div className="space-y-6 text-center">

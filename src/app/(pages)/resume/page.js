@@ -46,21 +46,11 @@ const resumeSections = [
   }
 ];
 
-
-
 export default function ResumePage() {
-  const [expandedSections, setExpandedSections] = useState(new Set(['education']));
+  const [expandedSection, setExpandedSection] = useState(null);
 
   const toggleSection = (sectionId) => {
-    setExpandedSections(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(sectionId)) {
-        newSet.delete(sectionId);
-      } else {
-        newSet.add(sectionId);
-      }
-      return newSet;
-    });
+    setExpandedSection(prev => (prev === sectionId ? null : sectionId));
   };
 
   return (
@@ -86,23 +76,23 @@ export default function ResumePage() {
               className="w-full flex justify-between items-center p-6 hover:bg-gray-800/50 transition-colors"
             >
               <div className="flex items-center gap-4">
-                <span className="text-purple-400/50 text-sm font-mono">
+                <span className="text-purple-400/50 text-lg font-mono">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h2 className="text-xl md:text-2xl font-medium text-white group-hover:text-purple-200 transition-colors">
+                <h2 className="text-xl md:text-2xl font-medium text-start text-white group-hover:text-purple-200 transition-colors">
                   {section.title}
                 </h2>
               </div>
               <FaChevronDown 
                 className={`text-purple-400 transform transition-transform duration-300 ${
-                  expandedSections.has(section.id) ? 'rotate-180' : ''
+                  expandedSection === section.id ? 'rotate-180' : ''
                 } group-hover:text-purple-300`}
                 size={16}
               />
             </button>
             
             <div className={`transition-all duration-300 ease-in-out ${
-              expandedSections.has(section.id) 
+              expandedSection === section.id 
                 ? 'max-h-[2000px] opacity-100' 
                 : 'max-h-0 opacity-0'
             } overflow-hidden backdrop-blur-sm`}>
