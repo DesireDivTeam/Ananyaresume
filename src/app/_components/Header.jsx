@@ -94,7 +94,7 @@ export default function Header() {
           <div className="flex items-center gap-5">
             <div className="hidden md:flex items-center gap-4">
               <a
-                href="https://linkedin.com/in/ananya-bhargava"
+                href="https://linkedin.com/in/ananya-bhatnagar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-[#0077B5]"
@@ -102,7 +102,7 @@ export default function Header() {
                 <FaLinkedinIn size={18} />
               </a>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/AnanyaBhatnagar09"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-gray-900"
@@ -152,7 +152,7 @@ export default function Header() {
               {/* Mobile Social Links */}
               <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
                 <a
-                  href="https://linkedin.com/in/ananya-bhargava"
+                  href="https://linkedin.com/in/ananya-bhatnagar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -160,7 +160,7 @@ export default function Header() {
                   <FaLinkedinIn size={20} className="text-[#0077B5]" />
                 </a>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/AnanyaBhatnagar09"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
