@@ -18,13 +18,20 @@ const menuStructure = {
     title: 'Experience',
     items: [
       { name: 'Internships', path: '/internship' },
-      { name: 'Leadership', path: '/leadership' },
       { name: 'Society Work', path: '/society-work' }
     ]
   }
 }
 
-
+const mobileMenuItems = [
+  { name: 'Resume', path: '/resume' },
+  { name: 'Research Paper', path: '/research-paper' },
+  { name: 'Case Study', path: '/case-study' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Internships', path: '/internship' },
+  { name: 'Society Work', path: '/society-work' },
+  { name: 'Contact', path: '/contact' }
+]
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -39,10 +46,10 @@ export default function Header() {
             <span className="text-purple-600">A</span>nanya
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation (unchanged) */}
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-8 text-[15px]">
-            <Link href="/resume" className="hover:text-purple-600 transition-colors">
+              <Link href="/resume" className="hover:text-purple-600 transition-colors">
                 <li>Resume</li>
               </Link>
               {Object.entries(menuStructure).map(([key, section]) => (
@@ -58,9 +65,9 @@ export default function Header() {
 
                   <div
                     className={`absolute top-full -left-2 w-48 bg-white shadow-lg rounded-lg py-1 transform transition-all duration-200 ${
-                      activeDropdown === key 
-                      ? 'opacity-100 visible translate-y-0' 
-                      : 'opacity-0 invisible -translate-y-2'
+                      activeDropdown === key
+                        ? 'opacity-100 visible translate-y-0'
+                        : 'opacity-0 invisible -translate-y-2'
                     }`}
                     onMouseEnter={() => setActiveDropdown(key)}
                     onMouseLeave={() => setActiveDropdown(null)}
@@ -86,25 +93,31 @@ export default function Header() {
           {/* Social Links & Mobile Menu Button */}
           <div className="flex items-center gap-5">
             <div className="hidden md:flex items-center gap-4">
-              <a href="https://linkedin.com/in/ananya-bhargava" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-[#0077B5]">
+              <a
+                href="https://linkedin.com/in/ananya-bhargava"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-[#0077B5]"
+              >
                 <FaLinkedinIn size={18} />
               </a>
-              <a href="https://github.com/yourusername" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-gray-900">
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-gray-900"
+              >
                 <FaGithub size={18} />
               </a>
-              <a href="mailto:ananyabh09@gmail.com" 
-                 className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-[#D44638]">
+              <a
+                href="mailto:ananyabh09@gmail.com"
+                className="p-2 hover:scale-110 hover:bg-gray-50 rounded-full transition-all text-gray-700 hover:text-[#D44638]"
+              >
                 <LuMail size={18} />
               </a>
             </div>
-            
-            <button 
+
+            <button
               className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors z-50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -114,55 +127,50 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay (new update) */}
       {isMenuOpen && (
-        <div 
+        <div
           className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
           onClick={() => setIsMenuOpen(false)}
         >
-          <div 
+          <div
             className="absolute right-0 top-16 w-64 bg-white shadow-lg h-[calc(100vh-4rem)] overflow-auto"
             onClick={e => e.stopPropagation()}
           >
             <div className="p-4 space-y-4">
-            <Link
-             onClick={() => setIsMenuOpen(false)} href="/resume" className="block pl-4 py-2 text-sm text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">
-                <span>Resume</span>
-              </Link>
-              {Object.values(menuStructure).map((section, idx) => (
-                <div key={idx} className="space-y-2">
-                  <div className="font-medium text-gray-900">{section.title}</div>
-                  <div className="space-y-1">
-                    {section.items.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.path}
-                        className="block pl-4 py-2 text-sm text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+              {mobileMenuItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block pl-4 py-2 text-sm text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
+                >
+                  {item.name}
+                </Link>
               ))}
-              
+
               {/* Mobile Social Links */}
               <div className="flex items-center gap-4 pt-4 border-t border-gray-200">
-                <a href="https://linkedin.com/in/ananya-bhargava" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <a
+                  href="https://linkedin.com/in/ananya-bhargava"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
                   <FaLinkedinIn size={20} className="text-[#0077B5]" />
                 </a>
-                <a href="https://github.com/yourusername" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <a
+                  href="https://github.com/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
                   <FaGithub size={20} />
                 </a>
-                <a href="mailto:ananyabh09@gmail.com" 
-                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <a
+                  href="mailto:ananyabh09@gmail.com"
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
                   <LuMail size={20} className="text-[#D44638]" />
                 </a>
               </div>
