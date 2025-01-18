@@ -36,9 +36,9 @@ export default function CaseStudyPage() {
 
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left Column - Smaller Images */}
-          <div className="lg:w-1/4">
+          <div className="lg:w-[20%]">
             <div className="sticky top-24 space-y-4">
-              <div className="group relative w-[300px] h-[200px] mx-auto overflow-hidden rounded-xl">
+              <div className="group relative w-[200px] h-[150px] mx-auto overflow-hidden rounded-xl">
                 <Image
                   src="/images/case1.jpeg"
                   alt="Sustainable fashion"
@@ -47,7 +47,7 @@ export default function CaseStudyPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="group relative w-[300px] h-[200px] mx-auto overflow-hidden rounded-xl">
+              <div className="group relative w-[200px] h-[150px] mx-auto overflow-hidden rounded-xl">
                 <Image
                   src="/images/case2.jpg"
                   alt="H&M store"
@@ -61,9 +61,9 @@ export default function CaseStudyPage() {
 
 
           {/* Right Column - Highlighted Content */}
-          <div className="lg:w-3/4 space-y-4">
+          <div className="lg:w-[80%] space-y-3">
             <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-              <h2 className="text-2xl font-semibold text-white mb-4">Overview</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">Overview</h2>
               <p className="text-gray-300 leading-relaxed">
                 This case study explores trends in Sustainable fashion and H&M&apos;s approach towards it and future trends for industry. 
                 The research delves into how H&M is implementing sustainable practices while maintaining its fast-fashion business model.
@@ -71,8 +71,8 @@ export default function CaseStudyPage() {
             </div>
 
             <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-              <h2 className="text-2xl font-semibold text-white mb-4">Key Findings</h2>
-              <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-white mb-4">Key Findings</h2>
+              <div className="space-y-2">
                 {keyFindings.map((finding, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <BsCheck2Circle className="text-purple-400 w-5 h-5 mt-1 flex-shrink-0" />
@@ -82,8 +82,8 @@ export default function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-              <h2 className="text-2xl font-semibold text-white mb-4">Conclusion</h2>
+            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
+              <h2 className="text-xl font-semibold text-white mb-4">Conclusion</h2>
               <div className="text-gray-300">
                 <p className="leading-relaxed">
                   Sustainable fashion is not just a trend, but a necessary evolution of the industry. 

@@ -68,19 +68,19 @@ export default function ResumePage() {
     <Wrapper className="py-8">
       <div className="max-w-5xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4">
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
             Resume
           </h1>
         </div>
 
         {/* Introduction Section */}
-        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-6 md:p-8 mb-4 hover:border-purple-500/30 transition-all duration-300">
-          <div className="grid gap-4">
+        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-4 md:p-6  mb-4 hover:border-purple-500/30 transition-all duration-300">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
             {introPoints.map((point, idx) => (
-              <div key={idx} className="flex items-start gap-4 group">
+              <div key={idx} className="flex items-start gap-3 group">
                 <FaStar className="w-5 h-5 mt-1 text-purple-400 group-hover:text-purple-300 flex-shrink-0" />
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
                   {point}
                 </p>
               </div>
@@ -89,7 +89,7 @@ export default function ResumePage() {
         </div>
 
         {/* Accordion Sections */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {resumeSections.map((section) => (
             <div 
               key={section.id} 
@@ -97,7 +97,7 @@ export default function ResumePage() {
             >
               <button
                 onClick={() => toggleSection(section.id)}
-                className="w-full flex justify-between items-center p-6 hover:bg-gray-800/50 transition-colors"
+                className="w-full flex justify-between items-center p-3 hover:bg-gray-800/50 transition-colors"
               >
                 <div className="flex items-center gap-4">
                   <span className="text-purple-400 p-2.5 rounded-lg bg-purple-400/10">

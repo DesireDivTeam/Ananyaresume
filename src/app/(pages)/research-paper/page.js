@@ -36,9 +36,9 @@ export default function ResearchPaperPage() {
 
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left Column - Smaller Images */}
-          <div className="lg:w-1/4">
+          <div className="lg:w-[20%]">
             <div className="sticky top-24 space-y-4">
-              <div className="group relative w-[300px] h-[200px] mx-auto overflow-hidden rounded-xl">
+              <div className="group relative w-[200px] h-[150px] mx-auto overflow-hidden rounded-xl">
                 <Image
                   src="/images/research1.jpg"
                   alt="Research methodology"
@@ -47,7 +47,7 @@ export default function ResearchPaperPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
-              <div className="group relative w-[300px] h-[200px] mx-auto overflow-hidden rounded-xl">
+              <div className="group relative w-[200px] h-[150px] mx-auto overflow-hidden rounded-xl">
                 <Image
                   src="/images/research2.jpg"
                   alt="Data analysis"
@@ -60,9 +60,9 @@ export default function ResearchPaperPage() {
           </div>
 
           {/* Right Column - Highlighted Content */}
-          <div className="lg:w-3/4 space-y-4">
+          <div className="lg:w-[80%] space-y-3">
             <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-              <h2 className="text-2xl font-semibold text-white mb-4">Publication Details</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">Publication Details</h2>
               <p className="text-gray-300 leading-relaxed">
                 Published in International Journal of Advance Research, Ideas and Innovations in Technology 
                 (Volume 10, Issue 1 - V10I1-1192)
@@ -70,7 +70,7 @@ export default function ResearchPaperPage() {
             </div>
 
             <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-              <h2 className="text-2xl font-semibold text-white mb-4">Research Overview</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">Research Overview</h2>
               <div className="text-gray-300 space-y-4">
                 <p className="leading-relaxed">
                   In this research paper, I explored the concept of defaulters, their identification methods, 
@@ -81,7 +81,7 @@ export default function ResearchPaperPage() {
             </div>
 
             <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700/30 hover:border-purple-500/30 transition-colors">
-              <h2 className="text-2xl font-semibold text-white mb-4">Methodology</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">Methodology</h2>
               <div className="space-y-3">
                 {methodologyPoints.map((point, index) => (
                   <div key={index} className="flex items-start gap-3">
