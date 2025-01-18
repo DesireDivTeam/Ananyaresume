@@ -1,8 +1,28 @@
 import React from 'react'
 import Wrapper from './Wrapper'
 import Image from 'next/image'
+import { FaGraduationCap, FaCode, FaChartLine, FaMusic } from 'react-icons/fa'
 
 export default function Banner() {
+    const highlights = [
+        {
+            icon: <FaGraduationCap className="w-5 h-5" />,
+            text: "B.Tech in Computer Science at Delhi Technological University"
+        },
+        {
+            icon: <FaCode className="w-5 h-5" />,
+            text: "Keen interest in Data Structures, Algorithms & OOPS"
+        },
+        {
+            icon: <FaChartLine className="w-5 h-5" />,
+            text: "Passionate about Data Science/Analytics & Finance"
+        },
+        {
+            icon: <FaMusic className="w-5 h-5" />,
+            text: "Active performer in Dance and Cultural Activities"
+        }
+    ];
+
     return (
         <div className='w-full py-6'>
             <Wrapper className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
@@ -18,13 +38,22 @@ export default function Banner() {
                         <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
                     </div>
                 </section>
-                <section className='order-1 md:order-2 space-y-6'>
+                <section className='order-1 md:order-2 space-y-8'>
                     <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent'>
                         Ananya Bhatnagar
                     </h1>
-                    <p className='text-base md:text-lg text-gray-300 leading-relaxed'>
-                        Graduate Student pursuing B Tech in Computer Science from prestigious Delhi Technological University, with keen interest in Data Structures and Algorithms (DSA), Data Science/Analytics and Object Oriented Programming (OOPS), passionate about career in Tech, Finance & dance.
-                    </p>
+                    <div className='space-y-4'>
+                        {highlights.map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-3 group">
+                                <span className="text-purple-400 p-2 rounded-lg bg-purple-400/10 group-hover:text-purple-300">
+                                    {item.icon}
+                                </span>
+                                <p className='text-base md:text-lg text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors mt-1'>
+                                    {item.text}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </section>
             </Wrapper>
         </div>
