@@ -59,11 +59,11 @@ export default function Page() {
   };
 
   return (
-    <Wrapper>
-      <div className="max-w-4xl mx-auto px-2 md:px-4 py-8 md:py-12">
+    <Wrapper  className="py-8">
+      <div className="max-w-4xl mx-auto px-2 md:px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
             Society Work
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ export default function Page() {
         </div>
 
         {/* Expandable Sections */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {societySections.map((section, index) => (
             <div
               key={section.id}
@@ -117,7 +117,7 @@ export default function Page() {
         </div>
 
         {/* Footer Quote */}
-        <div className="mt-12 p-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl text-gray-400 leading-relaxed">
+        <div className="mt-5 p-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl text-gray-400 leading-relaxed">
           Through these initiatives, I strive to address the fundamental rights
           of underprivileged people, particularly in education and empowerment.
           Coming from a privileged position, I feel it&apos;s my responsibility

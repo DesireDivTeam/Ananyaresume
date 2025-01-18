@@ -4,11 +4,11 @@ import { Building2, Calendar, LineChart, MapPin } from "lucide-react";
 
 export default function Page() {
   return (
-    <Wrapper>
-      <div className="max-w-4xl mx-auto px-2 md:px-4 py-8 md:py-12">
+    <Wrapper className="py-8">
+      <div className="max-w-4xl mx-auto px-2 md:px-4">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
             Internship Experience
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -17,7 +17,7 @@ export default function Page() {
         </div>
 
         {/* Company Card */}
-        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl overflow-hidden mb-8">
+        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl overflow-hidden mb-4">
           <div className="p-8 space-y-6">
             {/* Company Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -64,7 +64,7 @@ export default function Page() {
         </div>
 
         {/* Content Sections */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           {/* Overview */}
           <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-8">
             <h3 className="text-xl font-medium text-white mb-4">Overview</h3>
