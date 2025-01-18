@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} bg-gray-900 text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} bg-gray-900 text-white antialiased max-h-screen lg:overflow-y-hidden overflow-x-hidden`}
       ><Header/>
         {children}
       </body>
