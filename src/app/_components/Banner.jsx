@@ -10,7 +10,7 @@ export default function Banner() {
                     <div className='relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden group'>
                         <Image 
                             src="/images/profile.jpg"
-                            alt="Ananya bhatnaga"
+                            alt="Ananya bhatnagar"
                             fill
                             className='object-cover transition-transform duration-500 group-hover:scale-105'
                             priority
