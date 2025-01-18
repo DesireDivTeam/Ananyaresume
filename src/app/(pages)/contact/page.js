@@ -43,7 +43,7 @@ export default function Page() {
               </div>
             </a>
 
-            <a href="https://www.linkedin.com/in/ananya-bhatnagar" target="_blank" rel="noopener noreferrer" className="group transform hover:-translate-y-1 transition-all duration-300">
+            <a href="https://www.linkedin.com/in/ananya-bhatnagar-9aa496255" target="_blank" rel="noopener noreferrer" className="group transform hover:-translate-y-1 transition-all duration-300">
               <div className="flex items-center gap-4  p-4 md:p-6 rounded-xl bg-gray-800/50 border border-gray-700/50 hover:border-purple-500/50 hover:bg-gray-700/50">
                 <div className="bg-purple-900/50 p-4 rounded-lg group-hover:scale-110 transition-transform">
                   <Linkedin className="w-6 h-6 text-purple-300" />
