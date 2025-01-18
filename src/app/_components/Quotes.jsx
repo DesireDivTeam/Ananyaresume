@@ -49,8 +49,8 @@ export default function Testimonial() {
     }, [currentIndex])
 
     return (
-      <div className='py-10 md:py-16'>
-          <Wrapper className='relative max-w-4xl mx-auto px-12'>
+      <div >
+          <Wrapper className='relative max-w-4xl mx-auto px-12 py-8'>
               <div className={`bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-8 md:p-12 transition-all duration-500 ${
                   transition ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'
               }`}>
