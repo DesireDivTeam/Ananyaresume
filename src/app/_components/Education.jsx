@@ -8,7 +8,7 @@ export default function Education() {
         <div>
           <h3 className="text-xl text-white font-medium">Delhi Technological University</h3>
           <p className="text-gray-400 text-base mt-1">B.Tech in Computer Science • 2022-2026</p>
-          <p className="text-purple-400 text-base mt-1">CGPA: 9.0</p>
+          <p className="text-purple-400 text-base mt-1">CGPA: 7.6</p>
         </div>
       </div>
       
