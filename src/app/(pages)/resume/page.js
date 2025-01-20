@@ -2,14 +2,13 @@
 import React, { useState } from "react";
 import Education from "@/app/_components/Education";
 import Wrapper from "@/app/_components/Wrapper";
-import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar } from "react-icons/fa";
-import { BsCheck2Circle } from "react-icons/bs";
+import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar, FaFileAlt } from "react-icons/fa";
 
 const introPoints = [
-  "Pursuing B.Tech in Computer Science at Delhi Technological University",
+  "Pursuing B.Tech in Computer Science (3rd Year) at Delhi Technological University",
+  "Strong foundation in DSA, OOPS, C++ and Mathematics",
   "Ranked in top 1.75 percentile in JEE examination",
   "Solved 379+ Questions on Leetcode and 663+ on Code Studios",
-  "Strong foundation in DSA, OOPS, and Mathematics",
   "Active member of IEEE club and Dance Society"
 ];
 
@@ -22,7 +21,7 @@ const resumeSections = [
   },
   {
     id: 'specialization',
-    title: 'Technical Expertise',
+    title: 'Academic Expertise',
     icon: <FaLaptopCode className="w-6 h-6" />,
     content: [
       "Expertise in Data Structures and Algorithms using C++",
@@ -34,7 +33,7 @@ const resumeSections = [
   },
   {
     id: 'leadership',
-    title: 'Leadership & Activities',
+    title: 'Leadership & Extracurricular Activities',
     icon: <FaUserTie className="w-6 h-6" />,
     content: [
       "Public Relations Head - Nrityangana (DTU Dance Club)",
@@ -65,23 +64,32 @@ export default function ResumePage() {
   };
 
   return (
-    <Wrapper className="py-8">
-      <div className="max-w-5xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-4">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-4">
-            Resume
-          </h1>
+    <Wrapper className="py-7">
+       <div className="max-w-5xl mx-auto px-4">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-4 flex-col">
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+              Resume
+            </h1>
+            <a 
+              href="/resume.pdf" 
+              target="_blank"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
+            >
+              <FaFileAlt className="w-4 h-4" />
+              Read Full CV
+            </a>
+          </div>
         </div>
 
         {/* Introduction Section */}
-        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-4 md:p-6  mb-4 hover:border-purple-500/30 transition-all duration-300">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
+        <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-3 md:p-4 mb-4 hover:border-purple-500/30 transition-all duration-300">
+          <div className="flex flex-wrap gap-3">
             {introPoints.map((point, idx) => (
-              <div key={idx} className="flex items-start gap-3 group">
-                <FaStar className="w-5 h-5 mt-1 text-purple-400 group-hover:text-purple-300 flex-shrink-0" />
+              <div key={idx} className="flex items-start gap-2 group">
+                <FaStar className="w-4 h-4 mt-1 text-purple-400 group-hover:text-purple-300 flex-shrink-0" />
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
-                  {point}
+                  {point}{idx === introPoints.length - 1 ? '.' : ';'}
                 </p>
               </div>
             ))}
@@ -127,7 +135,7 @@ export default function ResumePage() {
                     <div className="grid gap-4">
                       {section.content.map((text, idx) => (
                         <div key={idx} className="flex items-start gap-4 group/item">
-                          <BsCheck2Circle className="w-6 h-6 mt-0.5 text-purple-400 group-hover/item:text-purple-300 flex-shrink-0" />
+                        <div className="w-2.5 h-2.5 mt-2.5 rounded-full bg-purple-400" />
                           <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">
                             {text}
                           </p>
