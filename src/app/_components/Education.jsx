@@ -17,7 +17,7 @@ export default function Education() {
         <div>
           <h3 className="text-xl text-white font-medium">CBSE Class XII</h3>
           <p className="text-gray-400 text-base mt-1">Amity Pushp Vihar, New Delhi • 2022</p>
-          <p className="text-purple-400 text-base mt-1">Percentage: 95.6%</p>
+          <p className="text-purple-400 text-base mt-1">Percentage: 96%</p>
         </div>
       </div>
 
