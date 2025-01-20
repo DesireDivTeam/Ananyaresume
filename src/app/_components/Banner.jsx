@@ -27,15 +27,51 @@ export default function Banner() {
         <div className='w-full py-6'>
             <Wrapper className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
                 <section className='order-2 md:order-1'>
-                    <div className='relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden group mx-auto max-w-[400px]'>
-                        <Image 
-                            src="/images/profile.jpeg"
-                            alt="Ananya bhatnagar"
-                            fill
-                            className='object-cover transition-transform duration-500 group-hover:scale-105'
-                            priority
-                        />
-                        <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
+                                     <div className='grid grid-cols-2 gap-4 max-w-[400px] mx-auto'>
+                        {/* Image 1 */}
+                        <div className='relative h-[200px] rounded-xl overflow-hidden group'>
+                            <Image 
+                                src="/images/profile1.jpeg"
+                                alt="Ananya bhatnagar"
+                                fill
+                                className='object-cover transition-transform duration-500 group-hover:scale-105'
+                                priority
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
+                        </div>
+                        
+                        {/* Image 2 */}
+                        <div className='relative h-[200px] rounded-xl overflow-hidden group'>
+                            <Image 
+                                src="/images/profile2.jpeg"
+                                alt="Ananya bhatnagar"
+                                fill
+                                className='object-cover transition-transform duration-500 group-hover:scale-105'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
+                        </div>
+                        
+                        {/* Image 3 */}
+                        <div className='relative h-[200px] rounded-xl overflow-hidden group'>
+                            <Image 
+                                src="/images/profile3.jpeg"
+                                alt="Ananya bhatnagar"
+                                fill
+                                className='object-cover transition-transform duration-500 group-hover:scale-105'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
+                        </div>
+                        
+                        {/* Image 4 */}
+                        <div className='relative h-[200px] rounded-xl overflow-hidden group'>
+                            <Image 
+                                src="/images/profile4.jpeg"
+                                alt="Ananya bhatnagar"
+                                fill
+                                className='object-cover transition-transform duration-500 group-hover:scale-105'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
+                        </div>
                     </div>
                 </section>
                 <section className='order-1 md:order-2 space-y-8'>
