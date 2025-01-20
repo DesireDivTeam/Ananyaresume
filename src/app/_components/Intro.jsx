@@ -12,7 +12,7 @@ export default function Intro() {
         {
             icon: <FaUsers className="w-5 h-5" />,
             title: "Family Background",
-            text: "Raised in a close-knitted family with educators in Sciences and Language, contributing to all-round development"
+            text: "Raised in a close knitted family with grandparents & parents being educators and admirers of music and arts inspired me for all round development"
         },
         {
             icon: <FaGraduationCap className="w-5 h-5" />,
