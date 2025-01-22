@@ -28,7 +28,7 @@ export default function Intro() {
 
     return (
         <div>
-            <Wrapper className='max-w-4xl mx-auto space-y-5 py-8'>
+            <Wrapper className='max-w-4xl mx-auto space-y-5 py-5 md:py-0'>
                 <div className='bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-6 md:p-8 space-y-8'>
                     <h2 className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent'>
                         Introduction

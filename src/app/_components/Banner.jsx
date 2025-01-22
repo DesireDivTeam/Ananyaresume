@@ -24,38 +24,23 @@ export default function Banner() {
     ];
 
     return (
-        <div className='w-full py-6'>
+        <div className='w-full py-4'>
             <Wrapper className='grid grid-cols-1 md:grid-cols-2 gap-8 items-start'>
                 <section className='order-2 md:order-1'>
-            <div className='grid grid-cols-2 gap-6 max-w-[500px] mx-auto mt-6'>
-                {/* Profile Image 1 */}
-                <div className='relative h-[250px] rounded-xl overflow-hidden group border border-gray-700/30'>
-                    <Image 
-                        src="/images/profile3.jpeg"
-                        alt="Ananya bhatnagar"
-                        fill
-                        priority
-                        className='object-cover object-center transition-all duration-500 group-hover:scale-110'
-                        quality={100}
-                    />
-                   
-                </div>
-                
-                {/* Profile Image 2 */}
-                <div className='relative h-[250px] rounded-xl overflow-hidden group border border-gray-700/30'>
-                    <Image 
-                        src="/images/profile4.jpeg"
-                        alt="Ananya bhatnagar"
-                        fill
-                        priority
-                        className='object-cover object-center transition-all duration-500 group-hover:scale-110'
-                        quality={100}
-                    />
-                    
-                </div>
-            </div>
+                    <div className='max-w-[400px] mx-auto mt-4'>
+                        <div className='relative h-[350px] rounded-xl overflow-hidden group border border-gray-700/30'>
+                            <Image 
+                                src="/images/profile4.jpeg"
+                                alt="Ananya bhatnagar"
+                                fill
+                                priority
+                                className='object-cover object-center transition-all duration-500 group-hover:scale-110'
+                                quality={100}
+                            />
+                        </div>
+                    </div>
                 </section>
-                <section className='order-1 md:order-2 space-y-8'>
+                <section className='order-1 md:order-2 space-y-6'>
                     <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent'>
                         Ananya Bhatnagar
                     </h1>
