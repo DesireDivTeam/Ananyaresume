@@ -9,12 +9,6 @@ const projects = [
     description: "Developed a two-player Snakes and Ladders game in C, featuring dice rolls, seamless gameplay, and an algorithm that calculates the shortest path to the destination.",
     tech: ["C", "Data Structures", "Algorithms"],
     github: "https://github.com/AnanyaBhatnagar09/Snakes-and-Ladder.git",
-  },
-  {
-    title: "Web Scraper for Movie Titles",
-    description: "Utilized Python libraries to fetch and parse HTML content, extracting movie titles and implementing data persistence.",
-    tech: ["Python", "BeautifulSoup", "Web Scraping"],
-    github: "https://github.com/AnanyaBhatnagar09/Top-100-movies-towatch.git",
   }
 ];
 
