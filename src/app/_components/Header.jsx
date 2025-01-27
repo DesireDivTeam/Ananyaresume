@@ -6,6 +6,13 @@ import { LuMail } from "react-icons/lu"
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx"
 
 const menuStructure = {
+  resume: {
+    title: 'Resume',
+    items: [
+      { name: 'Resume', path: '/resume' },
+      { name: 'Certificates', path: '/resume' }
+    ]
+  },
   academic: {
     title: 'Academic',
     items: [
@@ -23,8 +30,10 @@ const menuStructure = {
   }
 }
 
+
 const mobileMenuItems = [
   { name: 'Resume', path: '/resume' },
+  { name: 'Certificates', path: '/resume' },
   { name: 'Research Paper', path: '/research-paper' },
   { name: 'Case Study', path: '/case-study' },
   { name: 'Projects', path: '/projects' },
@@ -49,9 +58,7 @@ export default function Header() {
           {/* Desktop Navigation (unchanged) */}
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-8 text-[15px]">
-              <Link href="/resume" className="hover:text-purple-600 transition-colors">
-                <li>Resume</li>
-              </Link>
+             
               {Object.entries(menuStructure).map(([key, section]) => (
                 <li key={key} className="relative group">
                   <button
