@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Education from "@/app/_components/Education";
 import Wrapper from "@/app/_components/Wrapper";
-import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar, FaFileAlt } from "react-icons/fa";
+import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar, FaFileAlt, FaCertificate } from "react-icons/fa";
+import Certificates from "@/app/_components/Certificates";
 
 const introPoints = [
   "Pursuing B.Tech in Computer Science (3rd Year) at Delhi Technological University",
@@ -28,7 +29,10 @@ const resumeSections = [
       "Object Oriented Programming & Advanced C++ concepts",
       "Python development with libraries like Selenium, BeautifulSoup",
       "Web Development using HTML, CSS, JavaScript",
-      "Projects including Snakes & Ladder, Web Scrapers, etc."
+      "Projects including Portfolio Website and Data Analysis Tools",
+      `Published research paper "Role of Technology in finding Planned Defaulters" - International Journal of Advance Research, Ideas and Innovations in Technology (Volume 10, Issue 1 - V10I1-1192) | <a href="https://www.ijariit.com/manuscript/role-of-technology-in-finding-planned-defaulters/" target="_blank">Read Paper</a>`,
+      `Documentary creator - "Role of Technology in online payments trends, Risks & how to leverage technology to find planned defaulters" | <video link>`,
+      `Case study author - "Sustainable Fashion: H&M's Approach and Industry Trends" | <a href="https://medium.com/@ananyabh09/case-study-d740e01a73de" target="_blank">Read on Medium</a>`
     ]
   },
   {
@@ -53,6 +57,12 @@ const resumeSections = [
       "Web: HTML, CSS, JavaScript",
       "Tools: Git, VS Code, Linux",
     ]
+  },
+  {
+    id: 'certificates',
+    title: 'Academic and Extracurricular Certificates',
+    icon: <FaCertificate className="w-6 h-6" />,
+    component: <Certificates />
   }
 ];
 
