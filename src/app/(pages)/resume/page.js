@@ -25,14 +25,23 @@ const resumeSections = [
     title: 'Academic Expertise',
     icon: <FaLaptopCode className="w-6 h-6" />,
     content: [
+      "Projects including Portfolio Website and Data Analysis Tools",
+      {
+        text: 'Published research paper "Role of Technology in finding Planned Defaulters" - International Journal of Advance Research, Ideas and Innovations in Technology (Volume 10, Issue 1 - V10I1-1192)',
+        link: 'https://www.ijariit.com/manuscript/role-of-technology-in-finding-planned-defaulters/',
+        linkText: 'Read Paper'
+      },
+      "Documentary creator - Role of Technology in online payments trends, Risks & how to leverage technology to find planned defaulters",
+      {
+        text: "Case study author - 'Sustainable Fashion: H&M's Approach and Industry Trends'",
+        link: "https://medium.com/@ananyabh09/case-study-d740e01a73de",
+        linkText: "Read on Medium"
+      },
       "Expertise in Data Structures and Algorithms using C++",
       "Object Oriented Programming & Advanced C++ concepts",
       "Python development with libraries like Selenium, BeautifulSoup",
       "Web Development using HTML, CSS, JavaScript",
-      "Projects including Portfolio Website and Data Analysis Tools",
-      `Published research paper "Role of Technology in finding Planned Defaulters" - International Journal of Advance Research, Ideas and Innovations in Technology (Volume 10, Issue 1 - V10I1-1192) | <a href="https://www.ijariit.com/manuscript/role-of-technology-in-finding-planned-defaulters/" target="_blank">Read Paper</a>`,
-      `Documentary creator - "Role of Technology in online payments trends, Risks & how to leverage technology to find planned defaulters" | <video link>`,
-      `Case study author - "Sustainable Fashion: H&M's Approach and Industry Trends" | <a href="https://medium.com/@ananyabh09/case-study-d740e01a73de" target="_blank">Read on Medium</a>`
+     
     ]
   },
   {
@@ -73,23 +82,42 @@ export default function ResumePage() {
     setExpandedSection(prev => (prev === sectionId ? null : sectionId));
   };
 
+  const renderContent = (item) => {
+    if (typeof item === 'string') {
+      return <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">{item}</p>;
+    }
+    return (
+      <div className="space-y-2">
+        <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">
+          {item.text}
+        </p>
+        <a 
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-purple-400 hover:text-purple-300 transition-colors text-sm"
+        >
+          {item.linkText} →
+        </a>
+      </div>
+    );
+  };
+
   return (
     <Wrapper className="py-7">
-       <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-4 flex-col">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-              Resume
-            </h1>
-            <a 
-              href="/resume.pdf" 
-              target="_blank"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
-            >
-              <FaFileAlt className="w-4 h-4" />
-              Read Full CV
-            </a>
-          </div>
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+            Resume
+          </h1>
+          <a 
+            href="/resume.pdf" 
+            target="_blank"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
+          >
+            <FaFileAlt className="w-4 h-4" />
+            Read Full CV
+          </a>
         </div>
 
         {/* Introduction Section */}
@@ -105,9 +133,8 @@ export default function ResumePage() {
             ))}
           </div>
         </div>
-
-        {/* Accordion Sections */}
-        <div className="space-y-3">
+         {/* Accordion Sections */}
+         <div className="space-y-3">
           {resumeSections.map((section) => (
             <div 
               key={section.id} 
@@ -132,7 +159,6 @@ export default function ResumePage() {
                   size={16}
                 />
               </button>
-              
               <div className={`transition-all duration-300 ease-in-out ${
                 expandedSection === section.id 
                   ? 'max-h-[1000px] opacity-100' 
@@ -143,12 +169,10 @@ export default function ResumePage() {
                     section.component
                   ) : (
                     <div className="grid gap-4">
-                      {section.content.map((text, idx) => (
+                      {section.content.map((item, idx) => (
                         <div key={idx} className="flex items-start gap-4 group/item">
-                        <div className="w-2.5 h-2.5 mt-2.5 rounded-full bg-purple-400" />
-                          <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">
-                            {text}
-                          </p>
+                          <div className="w-2.5 h-2.5 mt-2.5 rounded-full bg-purple-400" />
+                          {renderContent(item)}
                         </div>
                       ))}
                     </div>
@@ -160,5 +184,6 @@ export default function ResumePage() {
         </div>
       </div>
     </Wrapper>
+
   );
 }
