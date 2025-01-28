@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Education from "@/app/_components/Education";
 import Wrapper from "@/app/_components/Wrapper";
-import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar, FaFileAlt, FaCertificate } from "react-icons/fa";
+import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar, FaFileAlt, FaCertificate, FaVideo } from "react-icons/fa";
 import Certificates from "@/app/_components/Certificates";
 import { CirclePlay } from "lucide-react";
 
@@ -26,29 +26,35 @@ const resumeSections = [
     title: 'Academic Expertise',
     icon: <FaLaptopCode className="w-6 h-6" />,
     content: [
+      "Expertise in Data Structures and Algorithms using C++",
+      "Object Oriented Programming & Advanced C++ concepts",
+      "Python development with libraries like Selenium, BeautifulSoup",
+      "Web Development using HTML, CSS, JavaScript",
       "Projects including Portfolio Website and Data Analysis Tools",
       {
         text: 'Published research paper "Role of Technology in finding Planned Defaulters" - International Journal of Advance Research, Ideas and Innovations in Technology (Volume 10, Issue 1 - V10I1-1192)',
         link: 'https://www.ijariit.com/manuscript/role-of-technology-in-finding-planned-defaulters/',
         linkText: 'Read Paper'
       },
-      "Documentary creator - Role of Technology in online payments trends, Risks & how to leverage technology to find planned defaulters",
       {
         text: "Case study author - 'Sustainable Fashion: H&M's Approach and Industry Trends'",
         link: "https://medium.com/@ananyabh09/case-study-d740e01a73de",
         linkText: "Read on Medium"
-      },
+      }
+    ]
+  },
+  {
+    id: 'documentary',
+    title: 'Documentary',
+    icon: <FaVideo className="w-6 h-6" />,
+    content: [
       {
-        text: 'Documentary creator - "Role of Technology in finding Planned Defaulters"',
+        text: 'Documentary: "Role of Technology in Finding Planned Defaulters"',
+        description: 'An in-depth exploration of online payment trends, risks, and technological solutions for identifying planned defaulters.',
         isVideo: true,
         videoUrl: '/vid.mp4',
         linkText: 'Watch Documentary'
-      },
-      "Expertise in Data Structures and Algorithms using C++",
-      "Object Oriented Programming & Advanced C++ concepts",
-      "Python development with libraries like Selenium, BeautifulSoup",
-      "Web Development using HTML, CSS, JavaScript",
-     
+      }
     ]
   },
   {
@@ -71,7 +77,7 @@ const resumeSections = [
       "C/C++: DSA, OOPS, Problem Solving",
       "Python: Web Scraping, Data Analysis",
       "Web: HTML, CSS, JavaScript",
-      "Tools: Git, VS Code, Linux",
+      "Tools: Git, VS Code, Linux"
     ]
   },
   {
@@ -100,11 +106,14 @@ export default function ResumePage() {
           <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">
             {item.text}
           </p>
+          {item.description && (
+            <p className="text-sm text-gray-400">{item.description}</p>
+          )}
           <button 
             onClick={() => setVideoModal({ isOpen: true, url: item.videoUrl })}
-            className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm"
+            className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
           >
-           <CirclePlay size={20} />
+            <CirclePlay size={20} />
             {item.linkText} →
           </button>
         </div>
@@ -119,7 +128,7 @@ export default function ResumePage() {
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-purple-400 hover:text-purple-300 transition-colors text-sm"
+          className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
         >
           {item.linkText} →
         </a>
@@ -130,20 +139,20 @@ export default function ResumePage() {
   return (
     <Wrapper className="py-7">
       <div className="max-w-5xl mx-auto px-4">
-            <div className="flex items-center gap-4 mb-8 flex-col md:flex-row justify-center">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-          Resume
-        </h1>
-        <a 
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-3 mt-2 md:mt-0 py-1 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
-        >
-          <FaFileAlt className="w-4 h-4" />
-          Read Full CV
-        </a>
-      </div>
+        <div className="flex items-center gap-4 mb-8 flex-col md:flex-row justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+            Resume
+          </h1>
+          <a 
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3 mt-2 md:mt-0 py-1 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
+          >
+            <FaFileAlt className="w-4 h-4" />
+            Read Full CV
+          </a>
+        </div>
 
         {/* Introduction Section */}
         <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-3 md:p-4 mb-4 hover:border-purple-500/30 transition-all duration-300">
@@ -158,8 +167,9 @@ export default function ResumePage() {
             ))}
           </div>
         </div>
-         {/* Accordion Sections */}
-         <div className="space-y-3">
+
+        {/* Accordion Sections */}
+        <div className="space-y-3">
           {resumeSections.map((section) => (
             <div 
               key={section.id} 
@@ -185,9 +195,7 @@ export default function ResumePage() {
                 />
               </button>
               <div className={`transition-all duration-300 ease-in-out ${
-                expandedSection === section.id 
-                  ? 'max-h-[1000px] opacity-100' 
-                  : 'max-h-0 opacity-0'
+                expandedSection === section.id ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
               } overflow-hidden`}>
                 <div className="p-6 border-t border-gray-700/30 bg-gray-900/30">
                   {section.component ? (
@@ -208,21 +216,26 @@ export default function ResumePage() {
           ))}
         </div>
       </div>
+
+      {/* Video Modal */}
       {videoModal.isOpen && (
         <div 
           className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
           onClick={() => setVideoModal({ isOpen: false, url: '' })}
         >
           <div className="relative w-full max-w-4xl aspect-video">
-            <iframe
+            <video
               src={videoModal.url}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+              controls
+              className="w-full h-full rounded-lg"
+              autoPlay
+            />
             <button 
               className="absolute -top-10 right-0 text-white hover:text-purple-400 text-3xl"
-              onClick={() => setVideoModal({ isOpen: false, url: '' })}
+              onClick={(e) => {
+                e.stopPropagation();
+                setVideoModal({ isOpen: false, url: '' });
+              }}
             >
               ×
             </button>
@@ -230,6 +243,5 @@ export default function ResumePage() {
         </div>
       )}
     </Wrapper>
-
   );
 }
