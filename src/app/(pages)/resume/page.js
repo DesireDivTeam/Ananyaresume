@@ -4,6 +4,7 @@ import Education from "@/app/_components/Education";
 import Wrapper from "@/app/_components/Wrapper";
 import { FaChevronDown, FaGraduationCap, FaLaptopCode, FaUserTie, FaTools, FaStar, FaFileAlt, FaCertificate } from "react-icons/fa";
 import Certificates from "@/app/_components/Certificates";
+import { CirclePlay } from "lucide-react";
 
 const introPoints = [
   "Pursuing B.Tech in Computer Science (3rd Year) at Delhi Technological University",
@@ -36,6 +37,12 @@ const resumeSections = [
         text: "Case study author - 'Sustainable Fashion: H&M's Approach and Industry Trends'",
         link: "https://medium.com/@ananyabh09/case-study-d740e01a73de",
         linkText: "Read on Medium"
+      },
+      {
+        text: 'Documentary creator - "Role of Technology in finding Planned Defaulters"',
+        isVideo: true,
+        videoUrl: '/vid.mp4',
+        linkText: 'Watch Documentary'
       },
       "Expertise in Data Structures and Algorithms using C++",
       "Object Oriented Programming & Advanced C++ concepts",
@@ -77,6 +84,7 @@ const resumeSections = [
 
 export default function ResumePage() {
   const [expandedSection, setExpandedSection] = useState('');
+  const [videoModal, setVideoModal] = useState({ isOpen: false, url: '' });
 
   const toggleSection = (sectionId) => {
     setExpandedSection(prev => (prev === sectionId ? null : sectionId));
@@ -85,6 +93,22 @@ export default function ResumePage() {
   const renderContent = (item) => {
     if (typeof item === 'string') {
       return <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">{item}</p>;
+    }
+    if (item.isVideo) {
+      return (
+        <div className="space-y-2">
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed group-hover/item:text-gray-200 transition-colors">
+            {item.text}
+          </p>
+          <button 
+            onClick={() => setVideoModal({ isOpen: true, url: item.videoUrl })}
+            className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm"
+          >
+           <CirclePlay size={20} />
+            {item.linkText} →
+          </button>
+        </div>
+      );
     }
     return (
       <div className="space-y-2">
@@ -106,19 +130,20 @@ export default function ResumePage() {
   return (
     <Wrapper className="py-7">
       <div className="max-w-5xl mx-auto px-4">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-            Resume
-          </h1>
-          <a 
-            href="/resume.pdf" 
-            target="_blank"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
-          >
-            <FaFileAlt className="w-4 h-4" />
-            Read Full CV
-          </a>
-        </div>
+            <div className="flex items-center gap-4 mb-8 flex-col md:flex-row justify-center">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+          Resume
+        </h1>
+        <a 
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-3 mt-2 md:mt-0 py-1 text-sm text-purple-400 hover:text-purple-300 border border-purple-400 hover:border-purple-300 rounded-full transition-colors"
+        >
+          <FaFileAlt className="w-4 h-4" />
+          Read Full CV
+        </a>
+      </div>
 
         {/* Introduction Section */}
         <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-3 md:p-4 mb-4 hover:border-purple-500/30 transition-all duration-300">
@@ -183,6 +208,27 @@ export default function ResumePage() {
           ))}
         </div>
       </div>
+      {videoModal.isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          onClick={() => setVideoModal({ isOpen: false, url: '' })}
+        >
+          <div className="relative w-full max-w-4xl aspect-video">
+            <iframe
+              src={videoModal.url}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <button 
+              className="absolute -top-10 right-0 text-white hover:text-purple-400 text-3xl"
+              onClick={() => setVideoModal({ isOpen: false, url: '' })}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </Wrapper>
 
   );
