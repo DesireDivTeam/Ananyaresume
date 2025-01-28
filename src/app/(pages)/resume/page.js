@@ -23,7 +23,7 @@ const resumeSections = [
   },
   {
     id: 'specialization',
-    title: 'Academic Expertise',
+    title: 'Academic Expertise & Specialization',
     icon: <FaLaptopCode className="w-6 h-6" />,
     content: [
       "Expertise in Data Structures and Algorithms using C++",
