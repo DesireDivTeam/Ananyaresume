@@ -22,11 +22,11 @@ export default function DocumentaryPage() {
   const [videoModal, setVideoModal] = useState({ isOpen: false, url: '' });
 
   return (
-    <Wrapper className='py-8 min-h-screen'>
+    <Wrapper className='py-8'>
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-2">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent pb-2">
             Documentaries
           </h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
@@ -39,10 +39,10 @@ export default function DocumentaryPage() {
           {documentaries.map((doc, idx) => (
             <div 
               key={idx}
-              className="group bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-8 hover:border-purple-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
+              className="group bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-gray-700/30 rounded-xl p-6 hover:border-purple-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
             >
-              <div className="space-y-6">
-                <h2 className="text-3xl font-semibold text-white group-hover:text-purple-200 transition-colors">
+              <div className="space-y-4">
+                <h2 className="text-2xl font-semibold text-white group-hover:text-purple-200 transition-colors">
                   {doc.title}
                 </h2>
              
