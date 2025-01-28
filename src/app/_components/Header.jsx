@@ -10,7 +10,7 @@ const menuStructure = {
     title: 'Resume',
     items: [
       { name: 'Resume', path: '/resume' },
-      { name: 'Certificates', path: '/resume' }
+      { name: 'Certificates', path: '/certificates'  }
     ]
   },
   academic: {
@@ -33,7 +33,7 @@ const menuStructure = {
 
 const mobileMenuItems = [
   { name: 'Resume', path: '/resume' },
-  { name: 'Certificates', path: '/resume' },
+  { name: 'Certificates', path: '/certificates'  },
   { name: 'Research Paper', path: '/research-paper' },
   { name: 'Case Study', path: '/case-study' },
   { name: 'Projects', path: '/projects' },
