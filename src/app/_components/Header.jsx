@@ -18,6 +18,7 @@ const menuStructure = {
     items: [
       { name: 'Research Paper', path: '/research-paper' },
       { name: 'Case Study', path: '/case-study' },
+      { name: 'Documentary', path: '/documentary' },
       { name: 'Projects', path: '/projects' }
     ]
   },
@@ -36,6 +37,7 @@ const mobileMenuItems = [
   { name: 'Certificates', path: '/certificates'  },
   { name: 'Research Paper', path: '/research-paper' },
   { name: 'Case Study', path: '/case-study' },
+  { name: 'Documentary', path: '/documentary' },
   { name: 'Projects', path: '/projects' },
   { name: 'Internships', path: '/internship' },
   { name: 'Society Work', path: '/society-work' },
