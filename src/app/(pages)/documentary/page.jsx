@@ -7,14 +7,7 @@ const documentaries = [
   {
     title: "Role of Technology in Finding Planned Defaulters",
     description: "An in-depth investigation into the evolving landscape of online payment systems and how advanced technology can be leveraged to identify potential defaulters. This documentary explores cutting-edge solutions, real-world case studies, and expert insights into financial risk management.",
-    videoUrl: "/vid.mp4",
-    
-  },
-  {
-    title: "Technology in Online Payments: Trends & Risks",
-    description: "A comprehensive analysis of modern payment technologies, emerging trends, and associated risks in the digital payment ecosystem. Features interviews with industry experts, detailed analysis of payment security measures, and future predictions for financial technology.",
-    videoUrl: "/vid2.mp4",
-   
+    videoUrl: "https://drive.google.com/file/d/1l7IuYrgcxfI8Hd6irTK5eqWZeLoSdOLA/preview"
   }
 ];
 
@@ -64,29 +57,29 @@ export default function DocumentaryPage() {
 
       {/* Video Modal */}
       {videoModal.isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/95 flex items-center justify-center z-50 p-4 md:p-8"
-          onClick={() => setVideoModal({ isOpen: false, url: '' })}
-        >
-          <div className="relative w-full max-w-5xl aspect-video">
-            <video
-              src={videoModal.url}
-              controls
-              className="w-full h-full rounded-xl shadow-2xl"
-              autoPlay
-            />
-            <button 
-              className="absolute -top-12 right-0 text-white hover:text-purple-400 text-4xl transition-colors"
-              onClick={(e) => {
-                e.stopPropagation();
-                setVideoModal({ isOpen: false, url: '' });
-              }}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
+                <div 
+                  className="fixed inset-0 bg-black/95 flex items-center justify-center z-50 p-4 md:p-8"
+                  onClick={() => setVideoModal({ isOpen: false, url: '' })}
+                >
+                  <div className="relative w-full max-w-5xl aspect-video">
+                    <iframe
+                      src={videoModal.url}
+                      allow="autoplay"
+                      className="w-full h-full rounded-xl shadow-2xl"
+                      allowFullScreen
+                    />
+                    <button 
+                      className="absolute -top-12 right-0 text-white hover:text-purple-400 text-4xl transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setVideoModal({ isOpen: false, url: '' });
+                      }}
+                    >
+                      ×
+                    </button>
+                  </div>
+                </div>
+              )}
     </Wrapper>
   );
 }

@@ -23,7 +23,7 @@ const resumeSections = [
   },
   {
     id: 'specialization',
-    title: 'Academic Expertise & Specialization',
+    title: 'Academic Expertise And Achievements',
     icon: <FaLaptopCode className="w-6 h-6" />,
     content: [
       "Expertise in Data Structures and Algorithms using C++",
@@ -52,7 +52,7 @@ const resumeSections = [
         text: 'Documentary: "Role of Technology in Finding Planned Defaulters"',
         description: 'An in-depth exploration of online payment trends, risks, and technological solutions for identifying planned defaulters.',
         isVideo: true,
-        videoUrl: '/vid.mp4',
+        videoUrl: 'https://drive.google.com/file/d/1l7IuYrgcxfI8Hd6irTK5eqWZeLoSdOLA/preview',
         linkText: 'Watch Documentary'
       }
     ]
@@ -219,29 +219,29 @@ export default function ResumePage() {
 
       {/* Video Modal */}
       {videoModal.isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
-          onClick={() => setVideoModal({ isOpen: false, url: '' })}
-        >
-          <div className="relative w-full max-w-4xl aspect-video">
-            <video
-              src={videoModal.url}
-              controls
-              className="w-full h-full rounded-lg"
-              autoPlay
-            />
-            <button 
-              className="absolute -top-10 right-0 text-white hover:text-purple-400 text-3xl"
-              onClick={(e) => {
-                e.stopPropagation();
-                setVideoModal({ isOpen: false, url: '' });
-              }}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
+  <div 
+    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+    onClick={() => setVideoModal({ isOpen: false, url: '' })}
+  >
+    <div className="relative w-full max-w-4xl aspect-video">
+      <iframe
+        src={videoModal.url}
+        allow="autoplay"
+        className="w-full h-full rounded-lg"
+        allowFullScreen
+      />
+      <button 
+        className="absolute -top-10 right-0 text-white hover:text-purple-400 text-3xl"
+        onClick={(e) => {
+          e.stopPropagation();
+          setVideoModal({ isOpen: false, url: '' });
+        }}
+      >
+        ×
+      </button>
+    </div>
+  </div>
+)}
     </Wrapper>
   );
 }
